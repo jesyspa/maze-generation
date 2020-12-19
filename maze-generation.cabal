@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 2e2c2c93b965add3db7e143e9b96699619802bd4adc3a06c372e9f720d535fc5
+-- hash: bf3e0d90fa570aa716621ff81093bfc325b19cbf7fdd51397731cc56c30d0997
 
 name:           maze-generation
 version:        0.1.0.0
@@ -26,13 +26,14 @@ source-repository head
 
 library
   exposed-modules:
-      Lib
+      Maze
   other-modules:
       Paths_maze_generation
   hs-source-dirs:
       src
   build-depends:
-      base >=4.7 && <5
+      array
+    , base >=4.7 && <5
   default-language: Haskell2010
 
 executable maze-generation-exe
@@ -43,7 +44,8 @@ executable maze-generation-exe
       app
   ghc-options: -threaded -rtsopts -with-rtsopts=-N
   build-depends:
-      base >=4.7 && <5
+      array
+    , base >=4.7 && <5
     , maze-generation
   default-language: Haskell2010
 
@@ -56,6 +58,7 @@ test-suite maze-generation-test
       test
   ghc-options: -threaded -rtsopts -with-rtsopts=-N
   build-depends:
-      base >=4.7 && <5
+      array
+    , base >=4.7 && <5
     , maze-generation
   default-language: Haskell2010
