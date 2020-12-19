@@ -1,0 +1,40 @@
+name:                maze-generation
+version:             0.1.0.0
+github:              "jesyspa/maze-generation"
+license:             BSD3
+author:              "Anton Golov"
+maintainer:          "jesyspa@gmail.com"
+copyright:           "2020 Anton Golov"
+
+extra-source-files:
+- README.md
+
+description:         Please see the README on GitHub at <https://github.com/jesyspa/maze-generation#readme>
+
+dependencies:
+- base >= 4.7 && < 5
+
+library:
+  source-dirs: src
+
+executables:
+  maze-generation-exe:
+    main:                Main.hs
+    source-dirs:         app
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - maze-generation
+
+tests:
+  maze-generation-test:
+    main:                Spec.hs
+    source-dirs:         test
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - maze-generation

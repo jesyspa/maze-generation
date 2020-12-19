@@ -1,0 +1,61 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.33.0.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: 2e2c2c93b965add3db7e143e9b96699619802bd4adc3a06c372e9f720d535fc5
+
+name:           maze-generation
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/jesyspa/maze-generation#readme>
+homepage:       https://github.com/jesyspa/maze-generation#readme
+bug-reports:    https://github.com/jesyspa/maze-generation/issues
+author:         Anton Golov
+maintainer:     jesyspa@gmail.com
+copyright:      2020 Anton Golov
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+
+source-repository head
+  type: git
+  location: https://github.com/jesyspa/maze-generation
+
+library
+  exposed-modules:
+      Lib
+  other-modules:
+      Paths_maze_generation
+  hs-source-dirs:
+      src
+  build-depends:
+      base >=4.7 && <5
+  default-language: Haskell2010
+
+executable maze-generation-exe
+  main-is: Main.hs
+  other-modules:
+      Paths_maze_generation
+  hs-source-dirs:
+      app
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , maze-generation
+  default-language: Haskell2010
+
+test-suite maze-generation-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      Paths_maze_generation
+  hs-source-dirs:
+      test
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , maze-generation
+  default-language: Haskell2010
